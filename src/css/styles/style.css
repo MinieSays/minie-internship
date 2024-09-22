@@ -15179,6 +15179,26 @@ a.btn-slider:hover {
   height: 15px;
 }
 
+/* -------------------------Top Sellers Skeleton--------------------- */
+.top-sellers__author--image-skeleton {
+  background-color: 	 #dddbdd;
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%;
+}
+
+.top-sellers__author-info--skeleton {
+  background-color: 	 #dddbdd;
+  width: 100px;
+  height: 20px;
+}
+
+.top-sellers__author--price-skeleton {
+  background-color: 	 #dddbdd;
+  width: 40px; 
+  height: 20px;
+}
+
 /* Control Nav */
 
 .testi-slider .flex-control-nav {
