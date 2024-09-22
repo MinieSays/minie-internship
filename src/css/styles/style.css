@@ -13206,7 +13206,7 @@ a.read_more i {
 .nft_wrap {
   position: relative;
   width: 100%;
-  height: 150px;
+  height: 200px;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -15134,12 +15134,9 @@ a.btn-slider:hover {
 
 /* -------------------------Owl Carousel & Owl Carousel Skeleton--------------------- */
 
-.carousel__image {
-  height: 200px;
-}
-
-.carousel__image--author,
+.carousel__image--author--skeleton,
 .carousel__image--skeleton,
+.carousel__title--skeleton,
 .carousel__new-items--skeleton,
 .carousel__new-items--title,
 .carousel__new-items--price,
@@ -15147,8 +15144,18 @@ a.btn-slider:hover {
   background-color: 	 #dddbdd;
 }
 
+.carousel__title--skeleton {
+  width: 100px;
+  height: 20px;
+}
 
-.carousel__image--author {
+.carousel__title-text--skeleton {
+  width: 60px;
+  height: 20px;
+}
+
+
+.carousel__image--author--skeleton {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -15163,20 +15170,27 @@ a.btn-slider:hover {
   height: 350px;
 }
 
-.carousel__new-items--title {
+.carousel__new-items--title--skeleton {
   margin-top: 6px;
   width: 180px;
   height: 30px;
 }
 
-.carousel__new-items--price {
+.carousel__new-items--price--skeleton {
   width: 100px; 
   height: 20px;
 }
 
 .carousel_nft__item_like--skeleton {
+  margin-top: 36px;
   width: 30px;
   height: 15px;
+}
+
+.explore-items__skeleton {
+  width: 100%;
+  height: 400px;
+  background-color: 	 #dddbdd;
 }
 
 /* -------------------------Top Sellers Skeleton--------------------- */
@@ -16719,7 +16733,6 @@ img {
 
 .skeleton-box {
   display: inline-block;
-  height: 1em;
   position: relative;
   overflow: hidden;
   background-color: #dddbdd;

@@ -66,20 +66,18 @@ const HotCollections = () => {
                   <div className="" key={index}>
                     <div className="nft_coll">
                       <div className="nft_wrap">
-                        <div className="carousel__image--skeleton"></div>
+                        <div className="carousel__image--skeleton skeleton-box"></div>
                       </div>
                       <div className="nft_coll_pp">
-                        <div className="carousel__image--author"></div>
+                        <div className="carousel__image--author--skeleton skeleton-box"></div>
                         <i className="fa fa-check"></i>
                       </div>
                       <div className="nft_coll_info">
-                        <span className="carousel__title--skeleton">
-                          Loream
-                        </span>
+                        <div className="carousel__title--skeleton skeleton-box">
+                        </div>
                         <br></br>
-                        <span className="carousel__title--skeleton">
-                          Loream
-                        </span>
+                        <div className="carousel__title-text--skeleton skeleton-box">
+                        </div>
                       </div>
                     </div>
                   </div>
