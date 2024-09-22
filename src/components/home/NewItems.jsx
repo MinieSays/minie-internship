@@ -32,14 +32,14 @@ const NewItems = () => {
   };
 
   useEffect(() => {
-    async function fetchHotCollections() {
+    async function fetchNewCollections() {
       const { data } = await axios.get(
         `https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems`
       );
         setIsLoading(false);
         setNftCollection(data);
     }
-    fetchHotCollections();
+    fetchNewCollections();
   }, []);
 
   return (
