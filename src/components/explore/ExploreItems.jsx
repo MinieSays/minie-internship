@@ -98,17 +98,19 @@ const ExploreItems = () => {
         </>
       ) : (
         <>
-          {new Array(8).fill(0).map((_, index) => (
-            <div
-              key={index}
-              className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
-              style={{ display: "block", backgroundSize: "cover" }}
-            >
-              <div>
-                <div className="explore-items__skeleton skeleton-box"></div>
+          <>
+            {new Array(8).fill(0).map((_, index) => (
+              <div
+                key={index}
+                className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
+                style={{ display: "block", backgroundSize: "cover" }}
+              >
+                <div>
+                  <div className="explore-items__skeleton skeleton-box"></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </>
           <div className="col-md-12 text-center">
             {exploreNftCollections.length === nftCollections.length ? null : (
               <Link
