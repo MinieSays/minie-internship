@@ -27,17 +27,17 @@ const HotCollections = () => {
     },
     478: {
       items: 2,
-      nav: false,
+      nav: true,
     },
     768: {
       items: 3,
       nav: true,
-      loop: false,
+      loop: true,
     },
     1200: {
       items: 4,
       nav: true,
-      loop: false,
+      loop: true,
     },
   };
 
@@ -105,6 +105,7 @@ const HotCollections = () => {
                               src={collection.nftImage}
                               className="lazy img-fluid carousel__image"
                               alt=""
+                              
                             />
                           </Link>
                         </div>
