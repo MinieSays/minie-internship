@@ -32,12 +32,20 @@ const TopSellers = () => {
               {isLoading
                 ? new Array(12).fill(0).map((_, index) => (
                     <li key={index}>
-                      <div className="author_list_pp top-sellers__author--image-skeleton">
+                      <div className="author_list_pp">
+                        <div className=" top-sellers__author--image-skeleton skeleton-box">
+
+                        </div>
                         <i className="fa fa-check"></i>
                       </div>
                       <div className="author_list_info">
-                        <p className="top-sellers__author-info--skeleton"></p>
-                        <p className="top-sellers__author--price-skeleton"></p>
+                        <div className="top-sellers__author-info--skeleton skeleton-box">
+
+                        </div>
+                        <br></br>
+                        <div className="top-sellers__author--price-skeleton skeleton-box">
+
+                        </div>
                       </div>
                     </li>
                   ))
