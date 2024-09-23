@@ -12,6 +12,7 @@ const Author = () => {
   const [isFollowing, setIsFollowing] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     async function fetchAuthorData() {
       const { data } = await axios.get(
         `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
