@@ -9,7 +9,7 @@ const Author = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [authorData, setAuthorData] = useState([]);
   const [nftData, setNftData] = useState([]);
-  const [isFollowing, setIsFollowing] = useState(false)
+  const [isFollowing, setIsFollowing] = useState(false);
 
   useEffect(() => {
     async function fetchAuthorData() {
@@ -23,7 +23,6 @@ const Author = () => {
     fetchAuthorData();
   }, [id]);
 
-
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -36,51 +35,102 @@ const Author = () => {
           data-bgimage="url(images/author_banner.jpg) top"
           style={{ background: `url(${AuthorBanner}) top` }}
         ></section>
-        {authorData.map((author) => (
-          <section aria-label="section">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="d_profile de-flex">
-                    <div className="de-flex-col">
-                      <div className="profile_avatar">
-                        <img src={author.authorImage} alt="" />
 
-                        <i className="fa fa-check"></i>
-                        <div className="profile_name">
-                          <h4>
-                            {author.authorName}
-                            <span className="profile_username">@{author.tag}</span>
-                            <span id="wallet" className="profile_wallet">
-                              {author.address}
-                            </span>
-                            <button id="btn_copy" title="Copy Text">
-                              Copy
-                            </button>
-                          </h4>
+        {isLoading
+          ? new Array(1).fill(0).map((_, index) => (
+              <section aria-label="section">
+                <div className="container" key={index}>
+                  <div className="row">
+                    <div className="col-md-12">
+                      <div className="d_profile de-flex">
+                        <div className="de-flex-col">
+                          <div className="profile_avatar">
+                            <div className="author__image--skeleton skeleton-box"></div>
+
+                            <i className="fa fa-check"></i>
+                            <div className="profile_name">
+                              <h4 className="author__text--skeleton">
+                                <div className="author__name--skeleton skeleton-box"></div>
+                                <div className="author__user-name--skeleton skeleton-box"></div>
+                                <div
+                                  id="wallet"
+                                  className="author__wallet--skeleton skeleton-box"
+                                ></div>
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="profile_follow de-flex">
+                          <div className="de-flex-col">
+                            <div className="author__profile--btn--skeleton skeleton-box"></div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="profile_follow de-flex">
-                      <div className="de-flex-col">
-                        <div className="profile_follower">{!isFollowing ? `${author.followers}` : (+author.followers + 1)} followers</div>
-                        <Link onClick={() => setIsFollowing(!isFollowing)} to="#" className="btn-main">
-                         {!isFollowing ? "Follow" : "Unfollow"}
-                        </Link>
+                  </div>
+                </div>
+              </section>
+            ))
+          : authorData.map((author) => (
+              <section aria-label="section">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-md-12">
+                      <div className="d_profile de-flex">
+                        <div className="de-flex-col">
+                          <div className="profile_avatar">
+                            <img src={author.authorImage} alt="" />
+
+                            <i className="fa fa-check"></i>
+                            <div className="profile_name">
+                              <h4>
+                                {author.authorName}
+                                <span className="profile_username">
+                                  @{author.tag}
+                                </span>
+                                <span id="wallet" className="profile_wallet">
+                                  {author.address}
+                                </span>
+                                <button id="btn_copy" title="Copy Text">
+                                  Copy
+                                </button>
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="profile_follow de-flex">
+                          <div className="de-flex-col">
+                            <div className="profile_follower">
+                              {!isFollowing
+                                ? `${author.followers}`
+                                : +author.followers + 1}{" "}
+                              followers
+                            </div>
+                            <Link
+                              onClick={() => setIsFollowing(!isFollowing)}
+                              to="#"
+                              className="btn-main"
+                            >
+                              {!isFollowing ? "Follow" : "Unfollow"}
+                            </Link>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              </section>
+            ))}
 
-                <div className="col-md-12">
-                  <div className="de_tab tab_simple">
-                    <AuthorItems nftData={nftData} authorImage={author.authorImage} isLoading={isLoading} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        ))}
+        <div className="col-md-12">
+          <div className="de_tab tab_simple">
+            <AuthorItems
+              nftData={nftData}
+              authorImage={nftData.authorImage}
+              isLoading={isLoading}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
