@@ -35,8 +35,8 @@ const NewItems = () => {
       const { data } = await axios.get(
         `https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems`
       );
-        setIsLoading(false);
-        setNftCollection(data);
+      setIsLoading(false);
+      setNftCollection(data);
     }
     fetchNewCollections();
   }, []);
@@ -44,7 +44,12 @@ const NewItems = () => {
   return (
     <section id="section-items" className="no-bottom">
       <div className="container">
-        <div className="row">
+        <div
+          className="row"
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          data-aos-delay="50"
+        >
           <div className="col-lg-12">
             <div className="text-center">
               <h2>New Items</h2>
@@ -61,44 +66,43 @@ const NewItems = () => {
             >
               {new Array(6).fill(0).map((_, index) => (
                 <div key={index}>
-                <div className="nft__item">
-                  <div className="author_list_pp">
-                    <a href="/">
-                    <div className="carousel__image--author--skeleton skeleton-box"></div>
-                    <i className="fa fa-check"></i>
-                    </a>
-                  </div>
-                  <div className="nft__item_wrap">
-                    <div className="nft__item_extra">
-                      <div className="nft__item_buttons">
-                        <button>Buy Now</button>
-                        <div className="nft__item_share">
-                          <h4>Share</h4>
-                          <a href="" target="_blank" rel="noreferrer">
-                            <i className="fa fa-facebook fa-lg"></i>
-                          </a>
-                          <a href="" target="_blank" rel="noreferrer">
-                            <i className="fa fa-twitter fa-lg"></i>
-                          </a>
-                          <a href="">
-                            <i className="fa fa-envelope fa-lg"></i>
-                          </a>
+                  <div className="nft__item">
+                    <div className="author_list_pp">
+                      <a href="/">
+                        <div className="carousel__image--author--skeleton skeleton-box"></div>
+                        <i className="fa fa-check"></i>
+                      </a>
+                    </div>
+                    <div className="nft__item_wrap">
+                      <div className="nft__item_extra">
+                        <div className="nft__item_buttons">
+                          <button>Buy Now</button>
+                          <div className="nft__item_share">
+                            <h4>Share</h4>
+                            <a href="/" target="_blank" rel="noreferrer">
+                              <i className="fa fa-facebook fa-lg"></i>
+                            </a>
+                            <a href="/" target="_blank" rel="noreferrer">
+                              <i className="fa fa-twitter fa-lg"></i>
+                            </a>
+                            <a href="/">
+                              <i className="fa fa-envelope fa-lg"></i>
+                            </a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-        
-                    <div className="carousel__new-items--skeleton skeleton-box"></div>
-                  </div>
-                  <div className="nft__item_info">
-                    <div className="carousel__new-items--title--skeleton skeleton-box"></div>
-                    <div className="nft__item_price carousel__new-items--price--skeleton skeleton-box"></div>
-                    <div className="nft__item_like">
-                          <div className="carousel_nft__item_like--skeleton skeleton-box"></div>
-                      </div>
 
+                      <div className="carousel__new-items--skeleton skeleton-box"></div>
+                    </div>
+                    <div className="nft__item_info">
+                      <div className="carousel__new-items--title--skeleton skeleton-box"></div>
+                      <div className="nft__item_price carousel__new-items--price--skeleton skeleton-box"></div>
+                      <div className="nft__item_like">
+                        <div className="carousel_nft__item_like--skeleton skeleton-box"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
               ))}
             </OwlCarousel>
           ) : (

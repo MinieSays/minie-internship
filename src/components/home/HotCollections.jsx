@@ -14,8 +14,8 @@ const HotCollections = () => {
       const { data } = await axios.get(
         `https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections`
       );
-        setIsLoading(false);
-        setNftCollection(data);
+      setIsLoading(false);
+      setNftCollection(data);
     }
     fetchHotCollections();
   }, []);
@@ -44,7 +44,12 @@ const HotCollections = () => {
   return (
     <section id="section-collections" className="no-bottom">
       <div className="container">
-        <div className="row">
+        <div
+          className="row"
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          data-aos-delay="50"
+        >
           <div className="col-lg-12">
             <div className="text-center">
               <h2>Hot Collections</h2>
@@ -73,11 +78,9 @@ const HotCollections = () => {
                         <i className="fa fa-check"></i>
                       </div>
                       <div className="nft_coll_info">
-                        <div className="carousel__title--skeleton skeleton-box">
-                        </div>
+                        <div className="carousel__title--skeleton skeleton-box"></div>
                         <br></br>
-                        <div className="carousel__title-text--skeleton skeleton-box">
-                        </div>
+                        <div className="carousel__title-text--skeleton skeleton-box"></div>
                       </div>
                     </div>
                   </div>
@@ -103,7 +106,6 @@ const HotCollections = () => {
                               src={collection.nftImage}
                               className="lazy img-fluid carousel__image"
                               alt=""
-                              
                             />
                           </Link>
                         </div>

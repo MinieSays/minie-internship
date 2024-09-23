@@ -6,7 +6,7 @@ import NftCard from "../UI/NftCard";
 const ExploreItems = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [nftCollections, setNftCollection] = useState([]);
-  const [loadMoreCollections, _] = useState(4);
+  const [loadMoreCollections] = useState(4);
   const [defaultNumberOfCollections, setDefaultNumberOfCollections] =
     useState(8);
   let exploreNftCollections = nftCollections.slice(
