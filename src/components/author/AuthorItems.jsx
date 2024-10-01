@@ -1,12 +1,12 @@
 import { Link} from "react-router-dom";
 
 
-const AuthorItems = ({authorImage, nftData, authorId, isLoading}) => {
+const AuthorItems = ({nftData, isLoading}) => {
 
   console.log(nftData)
   return (
     <div className="de_tab_content">
-      <div className="tab-1">
+      <div className="tab-1 container">
         <div className="row">
           {
             isLoading ? (
@@ -21,8 +21,8 @@ const AuthorItems = ({authorImage, nftData, authorId, isLoading}) => {
                 <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={author.id}>
                   <div className="nft__item">
                     <div className="author_list_pp">
-                      <Link to={`/author/${authorId}`}>
-                        <img className="lazy" src={authorImage} alt="" />
+                      <Link to={`/author/${author.authorId}`}>
+                        <img className="lazy" src={author.authorImage} alt="" />
                         <i className="fa fa-check"></i>
                       </Link>
                     </div>
