@@ -25,7 +25,7 @@ const Author = () => {
   }, [id]);
 
   return (
-    <div id="wrapper">
+    <section id="wrapper">
       <div className="no-bottom no-top" id="content">
         <div id="top"></div>
 
@@ -47,7 +47,6 @@ const Author = () => {
                         <div className="de-flex-col">
                           <div className="profile_avatar">
                             <div className="author__image--skeleton skeleton-box"></div>
-
                             <i className="fa fa-check"></i>
                             <div className="profile_name">
                               <h4 className="author__text--skeleton">
@@ -81,7 +80,6 @@ const Author = () => {
                         <div className="de-flex-col">
                           <div className="profile_avatar">
                             <img src={author.authorImage} alt="" />
-
                             <i className="fa fa-check"></i>
                             <div className="profile_name">
                               <h4>
@@ -127,13 +125,12 @@ const Author = () => {
           <div className="de_tab tab_simple">
             <AuthorItems
               nftData={nftData}
-              authorImage={nftData.authorImage}
               isLoading={isLoading}
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

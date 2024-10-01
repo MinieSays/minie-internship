@@ -26,7 +26,7 @@ const ItemDetails = () => {
         <div id="top"></div>
         <section aria-label="section" className="mt90 sm-mt-0">
           <div className="container">
-            <div className="row">
+            <div className="row item">
               {
                 isLoading ? ( 
                   new Array(1).fill(0).map((_, index) => (
@@ -111,7 +111,6 @@ const ItemDetails = () => {
                               <h6>Owner</h6>
                               <div className="item_author">
                                 <div className="author_list_pp">
-                                  {/* CHECK */}
                                   <Link to={`/author/${item.ownerId}`}>
                                     <img
                                       className="lazy"
@@ -143,7 +142,7 @@ const ItemDetails = () => {
                                   </Link>
                                 </div>
                                 <div className="author_list_info">
-                                  <Link to={`/author/`}>{item.ownerName}</Link>
+                                  <Link to={`/author/${item.creatorId}`}>{item.ownerName}</Link>
                                 </div>
                               </div>
                             </div>

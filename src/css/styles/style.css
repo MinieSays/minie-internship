@@ -13678,6 +13678,7 @@ a.read_more i {
 
 .nft__item img {
   width: 100%;
+  max-height: fit-content;
   height: auto !important;
   border-radius: 8px;
   -moz-border-radius: 8px;
